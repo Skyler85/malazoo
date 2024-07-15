@@ -7,18 +7,18 @@ import Header from './components/Header';
 import Footer from './components/Footer.tsx';
 
 const App: React.FC = () => {
-  const { t } = useTranslation();
+	const { t } = useTranslation();
 
-  return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/recipe/:id" element={<Recipe />} />
-      </Routes>
-      <Footer />
-    </Router>
-  );
+	return (
+		<Router>
+			<Header />
+			<Routes>
+				<Route path="/" element={<Home title={t('home_title')} />} />
+				<Route path="/recipe/:id" element={<Recipe />} />
+			</Routes>
+			<Footer />
+		</Router>
+	);
 };
 
 export default App;
