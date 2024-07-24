@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 
 interface Recipe {
 	idDrink: string;
@@ -12,7 +12,7 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = () => {
-	const { t } = useTranslation();
+	// const { t } = useTranslation();
 	const [recipes, setRecipes] = useState<Recipe[]>([]);
 
 	useEffect(() => {
@@ -22,9 +22,9 @@ const Home: React.FC<HomeProps> = () => {
 	}, []);
 
 	return (
-		<div>
-			<h2>{t('welcome')}</h2>
-			<input type="text" placeholder={t('search')} />
+		<div className="m-auto w-40 h-full">
+			<h2>{'welcome'}</h2>
+			<input type="text" placeholder={'search'} />
 			<div>
 				{recipes.map((recipe) => (
 					<div key={recipe.idDrink}>
